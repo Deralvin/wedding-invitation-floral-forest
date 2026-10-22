@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-botanical-deep: #1F2E22;
+  --color-botanical-forest: #364E3D;
+  --color-botanical-sage: #7A9A83;
+  --color-earth-terracotta: #C86D51;
+  --color-earth-warm: #E0896E;
+  --color-kraft-bg: #F7F4EE;
+  --color-kraft-card: #EFEAE1;
+  --color-kraft-border: #DDD4C4;
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", monospace;
+}
+
+:root {
+  --bg-kraft: #F7F4EE;
+  --text-botanical: #1F2E22;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-kraft);
+  color: var(--text-botanical);
+}
+
+body {
+  background-color: #F7F4EE;
+  color: #1F2E22;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Paper grain overlay */
+.kraft-texture {
+  background-color: #F7F4EE;
+  background-image: radial-gradient(rgba(31, 46, 34, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.kraft-card-texture {
+  background-color: #EFEAE1;
+  background-image: radial-gradient(rgba(31, 46, 34, 0.03) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+/* Parallax Layer hardware acceleration */
+.parallax-layer {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Perforation dashed line */
+.ticket-perforation {
+  background-image: linear-gradient(to bottom, #DDD4C4 60%, rgba(255, 255, 255, 0) 0%);
+  background-position: right;
+  background-size: 2px 14px;
+  background-repeat: repeat-y;
+}
+
+.ticket-perforation-h {
+  background-image: linear-gradient(to right, #DDD4C4 60%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 14px 2px;
+  background-repeat: repeat-x;
+}
+
+/* Stamp vintage effect */
+.vintage-stamp {
+  border: 2px dashed #C86D51;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transform: rotate(-4deg);
+}
+
+/* Arch mask frame */
+.arch-frame {
+  border-radius: 9999px 9999px 1rem 1rem;
+}
+
+/* Reveal Transitions (Native 60 FPS) */
+.reveal-init {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init.reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-init-left {
+  opacity: 0;
+  transform: translate3d(-40px, 0, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init-left.reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-init-right {
+  opacity: 0;
+  transform: translate3d(40px, 0, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init-right.reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.reveal-init-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init-scale.reveal-visible {
+  opacity: 1;
+  transform: scale(1);
+}
